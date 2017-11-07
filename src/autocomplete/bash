@@ -1,0 +1,9 @@
+#!/bin/bash
+# autocomplete for comfortable-swipe
+
+_comfortable_swipe()
+{
+  local cur=${COMP_WORDS[COMP_CWORD]}
+  COMPREPLY=( $(compgen -W "start stop restart autostart buffer help" -- $cur) )
+}
+complete -F _comfortable_swipe comfortable-swipe

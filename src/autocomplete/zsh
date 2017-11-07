@@ -1,0 +1,13 @@
+#compdef comfortable-swipe
+
+_comfortable_swipe()
+{
+    local state
+    _arguments \
+        '1: :->comfortable-swipe'
+    case $state in
+        (comfortable-swipe) _arguments '1:commands:(start stop restart autostart buffer help)' ;;
+            (*) compadd "$@"
+    esac
+}
+_comfortable_swipe "$@"
